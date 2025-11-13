@@ -1,0 +1,49 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.deepin.dde.daemon.Dock1">
+    <property name="DisplayMode" type="i" access="readwrite"/>
+    <property name="FrontendWindowRect" type="(iiii)" access="read">
+      <annotation name="org.qtproject.QtDBus.QtTypeName" value="QRect"/>
+    </property>
+    <property name="HideMode" type="i" access="readwrite"/>
+    <property name="HideState" type="i" access="read"/>
+    <property name="Position" type="i" access="readwrite"/>
+    <property name="WindowSizeEfficient" type="u" access="readwrite"/>
+    <property name="WindowSizeFashion" type="u" access="readwrite"/>
+    <signal name="DisplayModeChanged">
+      <arg name="displaymode" type="i" direction="out"/>
+    </signal>
+    <signal name="FrontendWindowRectChanged">
+      <arg name="FrontendWindowRect" type="(iiii)" direction="out"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QRect"/>
+    </signal>
+    <signal name="HideModeChanged">
+      <arg name="hideMode" type="i" direction="out"/>
+    </signal>
+    <signal name="HideStateChanged">
+      <arg name="hideState" type="i" direction="out"/>
+    </signal>
+    <signal name="PositionChanged">
+      <arg name="Position" type="i" direction="out"/>
+    </signal>
+    <signal name="WindowSizeEfficientChanged">
+      <arg name="size" type="u" direction="out"/>
+    </signal>
+    <signal name="WindowSizeFashionChanged">
+      <arg name="size" type="u" direction="out"/>
+    </signal>
+    <method name="IsDocked">
+      <arg type="b" direction="out"/>
+      <arg name="desktopFile" type="s" direction="in"/>
+    </method>
+    <method name="RequestDock">
+      <arg type="b" direction="out"/>
+      <arg name="desktopFile" type="s" direction="in"/>
+      <arg name="index" type="i" direction="in"/>
+    </method>
+    <method name="RequestUndock">
+      <arg type="b" direction="out"/>
+      <arg name="desktopFile" type="s" direction="in"/>
+    </method>
+  </interface>
+</node>
