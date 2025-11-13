@@ -27,6 +27,7 @@ Build-Depends:
  qt6-wayland-private-dev,
  qtchooser,
  systemd,
+ systemd-dev,
 Standards-Version: 4.6.2
 Homepage: https://github.com/linuxdeepin/dde-clipboard
 
